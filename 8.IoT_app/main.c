@@ -9,9 +9,9 @@
 #include <string.h>
 #include <util/delay.h> // _delay_ms(), _delay_us
 
-#include "twi.h"
-#include "uart.h"
-#include "lcd.h"
+#include "twi.c"
+#include "uart.c"
+#include "lcd.c"
 
 ////////////////////////////////
 uint8_t temp_fun, trans_bit;
@@ -48,27 +48,17 @@ char *receive_string(){ //receive a string through uart
     return string;
 }
 
-// ---- Exercise 8.2: delay_keypad (added before main) ----
 void delay_keypad()
 {
     char character;
-    character=keypad_to_ascii();
-    if(character=='3') flag=true;
-    if(character=='#') flag=false;
+    for(int i=1; i<=250; i++)
+    {
+        _delay_ms(1);
+        character=keypad_to_ascii();
+        if(character=='3') flag=true;
+        if(character=='#') flag=false;
+    }
 }
-
-// ---- Exercise 8.3: delay_keypad with loop (added before main) ----
-// void delay_keypad()
-// {
-//     char character;
-//     for(int i=1; i<=250; i++)
-//     {
-//         _delay_ms(1);
-//         character=keypad_to_ascii();
-//         if(character=='3') flag=true;
-//         if(character=='#') flag=false;
-//     }
-// }
 
 int main(){
     char *result;

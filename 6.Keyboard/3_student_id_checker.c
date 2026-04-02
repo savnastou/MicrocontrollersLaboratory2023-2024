@@ -1,10 +1,9 @@
-/*
- * Exercise 6.3
- * Functions from Exercise 6.2 are used (ommited below).
- */
+#include <avr/io.h>
+#include <util/delay.h>
 
-// check_num: checks if the 2 entered digits match the correct team number (53)
-// and drives the LEDs accordingly
+#include "keyboard.c"
+#include "lcd.c"
+
 void check_num(char character_1, char character_2) {
     if ((character_1=='5')&&(character_2=='3')) //correct team number (53)
     {

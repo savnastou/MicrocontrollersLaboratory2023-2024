@@ -1,6 +1,5 @@
-// lcd.h
-// LCD implemented via PORT Expander (PCA9555) instead of PORTD,
-// because PORTD is used by the one-wire serial protocol in "thermometer.h"
+#include <avr/io.h>
+#include <util/delay.h>
 
 int state;
 

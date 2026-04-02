@@ -1,8 +1,7 @@
-/*
- * Exercise 5.2
- * The remaining functions (twi_init, twi_write, twi_start, twi_stop, etc.)
- * remain the same as in Exercise 5.1.
- */
+#include<avr/io.h>
+#include<avr/interrupt.h>
+#include<util/delay.h>
+#include "twi.c"
 
 void main(void) {
     twi_init();

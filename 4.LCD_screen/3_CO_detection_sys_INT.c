@@ -7,9 +7,7 @@
 #include <util/delay.h> // _delay_ms(), _delay_us()
 #include <stdbool.h>
 
-// NOTE: lcd helper functions (Enable_Pulse, write_2_nibbles, lcd_data,
-// lcd_command, lcd_clear_display, lcd_init) are identical to exercise_4_3_polling.c
-// and are omitted here for brevity. Include them before main().
+#include "lcd.c"
 
 float Vgas;
 float a[6]={1,1.666,2.333,3,3.666,4.333};  //limits for LED switching
